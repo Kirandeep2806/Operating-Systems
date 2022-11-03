@@ -1,5 +1,5 @@
 // Aim : Waits for a child process to stop or end
-#include<stdio.h>
+#include<stdio.h> // perror()
 
 // wait() starts
 #include<sys/wait.h>
@@ -20,7 +20,7 @@ int main() {
         printf("Hello!! I am child - %d, My parent is %d!\n", getpid(), getppid());
     }
     else {
-        fprintf(stderr, "Fork Failed!!");
+        perror("Fork Failed!!");
         return 1;
     }
     return 0;
