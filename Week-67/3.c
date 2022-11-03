@@ -14,10 +14,10 @@ int main() {
     pid_t pid = fork();
     if(pid>0) {
         wait(NULL);
-        printf("Hello!! From the parent!\n");
+        printf("Hello!! I am parent - %d!\n", getpid());
     }
     else if(pid==0) {
-        printf("I am the child\n");
+        printf("Hello!! I am child - %d, My parent is %d!\n", getpid(), getppid());
     }
     else {
         fprintf(stderr, "Fork Failed!!");
