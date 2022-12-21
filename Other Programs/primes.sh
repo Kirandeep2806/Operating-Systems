@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read -p "Enter first number : " a
-read -p "Enter 2nd number : " b
+# read -p "Enter first number : " a
+# read -p "Enter 2nd number : " b
 
 # sum=$(($a**$b))
 # echo "$sum"
@@ -12,8 +12,32 @@ read -p "Enter 2nd number : " b
 # 	echo "Bye"
 # fi
 
-while [ $a -le $b ]
+# while [ $a -le $b ]
+# do
+# 	echo "$a"
+# 	a=$(($a+1))
+# done
+
+
+
+
+# Code for Primes
+
+read -p "Enter a number : " a
+count=0 # Don't give space when you are assigning the values
+
+for((i=2;i<=$(($a/2));i++)) #spaces are not mandatory in for loop
 do
-	echo "$a"
-	a=$(($a+1))
+	if [ $(($a%$i)) -eq 0 ]
+	then
+		count=1
+		break
+	fi
 done
+
+if [ $count -eq 0 ]
+then
+	echo "Prime"
+else
+	echo "Not Prime"
+fi
