@@ -9,11 +9,11 @@ int main() {
     if(pid<0)
         perror("Fork Error!!\n");
     else if(pid>0) {
-        printf("Parent Process\n");
+        printf("Parent Process %d\n", getpid());
     }
     else {
-        sleep(2);
-        printf("Child Process\n");
+        sleep(5);
+        printf("Child Process %d\n", getpid());
     }
     return 0;
 }

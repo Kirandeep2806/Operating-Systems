@@ -2,7 +2,7 @@
 #include<unistd.h>
 
 int main() {
-    execl("/bin/ls", "ls", "-1", NULL);
+    execl("/bin/ls", "ls", "-l", NULL);
     printf("Ending of 2.c!!");
     return 0;
 }
