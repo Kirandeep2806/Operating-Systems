@@ -1,18 +1,22 @@
 #!/usr/bin/python3
 
-n=5 #Processes
-m=3 #Resources
+n=int(input("Enter the no.of processes : ")) #Processes
+m=int(input("Enter the no.of resources : ")) #Resources
 
-alloc = [[0, 1, 0 ],[ 2, 0, 0 ],
-        [3, 0, 2 ],[2, 1, 1] ,[ 0, 0, 2]]
-
-maxi = [[7, 5, 3 ],[3, 2, 2 ],
-        [ 9, 0, 2 ],[2, 2, 2],[4, 3, 3]]
+alloc = []
+maxi = []
+avail=[]
+for i in range(n):
+	inp = list(map(int, input(f"Enter alloted resources {i+1} : ").split(" ")))
+	alloc.append(inp)
+for i in range(n):
+	inp = list(map(int, input(f"Enter maximum resources {i+1} : ").split(" ")))
+	maxi.append(inp)
  
-avail = [3, 3, 2]
+for i in range(m):
+	avail.append(int(input(f"Available resources R{i+1} : ")))
 
 need=[]
-
 for i in range(n):
 	row_need=[]
 	for j in range(m):
